@@ -1,0 +1,10 @@
+/* Handwritten font for child-like style */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+:root {
+  font-family: 'Comic Sans MS', 'Comic Sans', 'Comic Neue', 'Chalkboard SE', cursive, sans-serif;
+}
+
+#root, .shopping-list, .item, input, button, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Comic Sans MS', 'Comic Sans', 'Comic Neue', 'Chalkboard SE', cursive, sans-serif;
+}

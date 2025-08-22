@@ -1,0 +1,87 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+/* Shopping List Container */
+.shopping-list {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+/* Item Row */
+.item {
+  display: grid;
+  grid-template-columns: 1fr 100px 120px auto;
+  gap: 12px;
+  align-items: center;
+  background: #f6f8fa;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 10px 16px;
+  transition: background 0.2s;
+}
+.item.purchased {
+  background: #e0ffe0;
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+/* Inputs */
+input[type="text"], input[type="number"] {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #d0d7de;
+  font-size: 1rem;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+input[type="text"]:focus, input[type="number"]:focus {
+  border-color: #646cff;
+  outline: none;
+}
+
+/* Buttons */
+button {
+  border-radius: 8px;
+  border: 1px solid #646cff;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #646cff;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.25s;
+}
+button:hover:not(:disabled) {
+  background: #535bf2;
+  border-color: #535bf2;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Footer */
+.shopping-list .footer {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .shopping-list {
+    padding: 1rem;
+  }
+  .item {
+    grid-template-columns: 1fr 60px 80px auto;
+    padding: 8px 8px;
+  }
+}
