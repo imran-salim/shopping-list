@@ -10,8 +10,8 @@ function makeId() {
 
 function ShoppingList() {
   const [items, setItems] = useState<ItemType[]>([]);
-  const [newItemName, setNewItemName] = useState('');
-  const [newItemQty, setNewItemQty] = useState(1);
+  const [newItemName, setNewItemName] = useState<string>('');
+  const [newItemQty, setNewItemQty] = useState<number>(1);
 
   function addItem() {
     if (newItemName === '') {
@@ -64,13 +64,13 @@ function ShoppingList() {
           type='text'
           placeholder='Add an item…'
           value={newItemName}
-          onChange={function(e) { setNewItemName(e.target.value); }}
+          onChange={(e) => { setNewItemName(e.target.value); }}
         />
         <input
           type='number'
           min={1}
           value={newItemQty}
-          onChange={function(e) { setNewItemQty(Math.max(1, Number(e.target.value) || 1)); }}
+          onChange={(e) => { setNewItemQty(Math.max(1, Number(e.target.value) || 1)); }}
         />
         <button onClick={addItem}>Add Item</button>
       </div>
@@ -80,7 +80,7 @@ function ShoppingList() {
         {items.length === 0 ? (
           <p style={{ opacity: 0.7 }}>No items yet. Add your first one above.</p>
         ) : (
-          items.map(function(item) {
+          items.map((item) => {
             return (
               <Item
                 key={item.id}
