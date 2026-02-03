@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ChangeEvent } from 'react';
 
 export type ItemType = {
   id: string;
@@ -16,15 +16,15 @@ type ItemProps = {
 function Item(props: ItemProps) {
   const item = props.item;
 
-  function handleNameChange(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleNameChange(e: ChangeEvent<HTMLInputElement>) {
     props.onUpdate(item.id, { name: e.target.value });
   }
 
-  function handleQtyChange(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleQtyChange(e: ChangeEvent<HTMLInputElement>) {
     props.onUpdate(item.id, { quantity: Math.max(1, Number(e.target.value) || 1) });
   }
 
-  function handlePurchasedChange(e: React.ChangeEvent<HTMLInputElement>) {
+  function handlePurchasedChange(e: ChangeEvent<HTMLInputElement>) {
     props.onUpdate(item.id, { isPurchased: e.target.checked });
   }
   

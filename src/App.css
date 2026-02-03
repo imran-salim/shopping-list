@@ -5,31 +5,37 @@
     border: 1px solid #e0e0e0;
     box-shadow: 0 4px 24px rgba(0,0,0,0.08);
   }
+
   .item {
     background: #f6f8fa;
     color: #23272f;
     border: 1px solid #e0e0e0;
   }
+
   input[type="text"], input[type="number"] {
     background: #fff;
     color: #23272f;
     border: 1px solid #d0d7de;
   }
+
   button {
     background-color: #f9f9f9;
     color: #646cff;
     box-shadow: none;
   }
+
   .item.purchased {
     background: #e0ffe0;
   }
 }
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
+
 /* Shopping List Container */
 .shopping-list {
   background: #23272f;

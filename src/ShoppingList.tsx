@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import Item from './components/Item';
 import type { ItemType } from './components/Item';
 
@@ -9,9 +9,9 @@ function makeId() {
 }
 
 function ShoppingList() {
-  const [items, setItems] = React.useState<ItemType[]>([]);
-  const [newItemName, setNewItemName] = React.useState('');
-  const [newItemQty, setNewItemQty] = React.useState(1);
+  const [items, setItems] = useState<ItemType[]>([]);
+  const [newItemName, setNewItemName] = useState('');
+  const [newItemQty, setNewItemQty] = useState(1);
 
   function addItem() {
     if (newItemName === '') {
@@ -30,7 +30,7 @@ function ShoppingList() {
   }
 
   function updateItem(id: string, patch: Partial<ItemType>) {
-    setItems(items.map(function(item: ItemType) {
+    setItems(items.map((item: ItemType) => {
       if (item.id === id) {
         return Object.assign({}, item, patch);
       }
@@ -39,7 +39,7 @@ function ShoppingList() {
   }
 
   function deleteItem(id: string) {
-    setItems(items.filter(function(item: ItemType) {
+    setItems(items.filter((item: ItemType) => {
       return item.id !== id;
     }));
   }
