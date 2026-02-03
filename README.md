@@ -65,12 +65,24 @@ shopping-list/
 ├── src/
 │   ├── components/
 │   │   └── Item.tsx
+│   ├── assets/
 │   ├── App.tsx
 │   ├── App.css
-│   └── main.tsx
+│   ├── ShoppingList.tsx
+│   ├── childlike-font.css
+│   ├── index.css
+│   ├── main.tsx
+│   └── vite-env.d.ts
 ├── public/
+├── eslint.config.js
+├── index.html
+├── LICENSE
 ├── package.json
-└── README.md
+├── README.md
+├── tsconfig.json
+├── tsconfig.app.json
+├── tsconfig.node.json
+└── vite.config.ts
 ```
 
 ## Customization
