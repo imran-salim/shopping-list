@@ -1,4 +1,4 @@
-import type { ChangeEvent } from 'react';
+import type { ChangeEvent, JSX } from 'react';
 
 export type ItemType = {
   id: string;
@@ -13,22 +13,22 @@ type ItemProps = {
   onDelete: (id: string) => void;
 };
 
-function Item(props: ItemProps) {
-  const item = props.item;
+function Item(props: ItemProps): JSX.Element {
+  const item: ItemType = props.item;
 
-  function handleNameChange(e: ChangeEvent<HTMLInputElement>) {
+  function handleNameChange(e: ChangeEvent<HTMLInputElement>): void {
     props.onUpdate(item.id, { name: e.target.value });
   }
 
-  function handleQtyChange(e: ChangeEvent<HTMLInputElement>) {
+  function handleQtyChange(e: ChangeEvent<HTMLInputElement>): void {
     props.onUpdate(item.id, { quantity: Math.max(1, Number(e.target.value) || 1) });
   }
 
-  function handlePurchasedChange(e: ChangeEvent<HTMLInputElement>) {
+  function handlePurchasedChange(e: ChangeEvent<HTMLInputElement>): void {
     props.onUpdate(item.id, { isPurchased: e.target.checked });
   }
   
-  function handleDelete() {
+  function handleDelete(): void {
     props.onDelete(item.id);
   }
 

@@ -1,19 +1,19 @@
-import { useState } from 'react';
+import { useState, type JSX } from 'react';
 import Item from './components/Item';
 import type { ItemType } from './components/Item';
 
 // This function makes a random id
-function makeId() {
+function makeId(): string {
   // I found this on StackOverflow
   return Math.random().toString(36).substring(2) + Date.now();
 }
 
-function ShoppingList() {
+function ShoppingList(): JSX.Element {
   const [items, setItems] = useState<ItemType[]>([]);
   const [newItemName, setNewItemName] = useState<string>('');
   const [newItemQty, setNewItemQty] = useState<number>(1);
 
-  function addItem() {
+  function addItem(): void {
     if (newItemName === '') {
       alert('Please enter an item name');
       return;
@@ -29,7 +29,7 @@ function ShoppingList() {
     setNewItemQty(1);
   }
 
-  function updateItem(id: string, patch: Partial<ItemType>) {
+  function updateItem(id: string, patch: Partial<ItemType>): void {
     setItems(items.map((item: ItemType) => {
       if (item.id === id) {
         return Object.assign({}, item, patch);
@@ -38,17 +38,17 @@ function ShoppingList() {
     }));
   }
 
-  function deleteItem(id: string) {
+  function deleteItem(id: string): void {
     setItems(items.filter((item: ItemType) => {
       return item.id !== id;
     }));
   }
 
-  function clearList() {
+  function clearList(): void {
     setItems([]);
   }
 
-  let purchasedCount = 0;
+  let purchasedCount: number = 0;
   for (let i = 0; i < items.length; i++) {
     if ((items[i] as ItemType).isPurchased) {
       purchasedCount++;
